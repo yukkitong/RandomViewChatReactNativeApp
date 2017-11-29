@@ -10,8 +10,12 @@
     "object-hash": "^1.2.0",
     "react": "16.0.0",
     "react-native": "0.50.4",
+<<<<<<< HEAD
     "react-native-elements": "^0.18.4",
     "react-native-vector-icons": "^4.4.2"
+=======
+    "rn-viewpager": "^1.2.8"
+>>>>>>> 361851c2886874bdf6a262b1c4f63f84d8d7ba8d
   },
   "devDependencies": {
     "babel-jest": "21.2.0",

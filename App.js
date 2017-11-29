@@ -27,8 +27,8 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.setState({
-      email: 'jason98.bae@gmail.com',
-      password: 'sung1761'
+      email: 'ahn5748@gmail.com',
+      password: '1qaz!@#$'
     });
   }
 
@@ -36,7 +36,11 @@ export default class App extends React.Component {
     let email = this.state.email;
     let password = this.state.password;
     
+<<<<<<< HEAD
     fetch('http://192.168.0.6:3333/api/login', {
+=======
+    fetch('http://192.168.0.10:3333/api/login', {
+>>>>>>> 361851c2886874bdf6a262b1c4f63f84d8d7ba8d
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
