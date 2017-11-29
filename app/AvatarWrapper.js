@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+
 import {
   StyleSheet,
   View,
   Text,
 } from 'react-native';
+
 import { 
   Header, 
   Avatar, 
@@ -11,9 +13,10 @@ import {
   CheckBox,
 } from 'react-native-elements';
 
+
 export default class AvatarWrapper extends Component {
 
-  state = { checked: true }
+  state = { checked: true };
 
   constructor(props) {
     super(props);
@@ -26,16 +29,17 @@ export default class AvatarWrapper extends Component {
 
   render() {
     return (
-      <View style={styles.wrapper}><Header
-  centerComponent={{ text: 'MY TITLE', style: { color: '#fff'} }}
-  outerContainerStyles={{ backgroundColor: '#3D6DCC', alignSelf:'stretch' }}
-  innerContainerStyles={{ justifyContent: 'space-around',}}
-/>
+      <View style={styles.wrapper}>
+        <Header
+          centerComponent={{ text: 'MY TITLE', style: { color: '#fff'} }}
+          outerContainerStyles={{ backgroundColor: '#3D6DCC', alignSelf:'stretch' }}
+          innerContainerStyles={{ justifyContent: 'space-around',}}
+        />
         <View style={{
           flex: 2,
           alignItems: 'center', 
           justifyContent: 'center',
-          }}>
+        }}>
           <Avatar
             xlarge
             rounded
@@ -62,7 +66,6 @@ export default class AvatarWrapper extends Component {
             uncheckedIcon='add'
             checkedColor='red'
             checked={this.state.checked} />*/}
-        
         </View>
       </View>
     );
@@ -77,4 +80,4 @@ const styles = StyleSheet.create({
   },
   avatar: {
   }
-})
+});
