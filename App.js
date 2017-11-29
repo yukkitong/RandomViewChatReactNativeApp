@@ -36,7 +36,7 @@ export default class App extends React.Component {
     let email = this.state.email;
     let password = this.state.password;
     
-    fetch('http://192.168.219.106:3333/api/login', {
+    fetch('http://192.168.0.6:3333/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
