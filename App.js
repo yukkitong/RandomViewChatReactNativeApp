@@ -5,7 +5,7 @@
  */
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Platform,
   StyleSheet,
@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 
 
-export default class App extends Component {
+export default class App extends React.Component {
 
   constructor(props) {
     super(props);
