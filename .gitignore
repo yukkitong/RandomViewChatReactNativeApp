@@ -54,3 +54,9 @@ buck-out/
 
 # Mock-server
 server/
+
+
+
+# My own files
+App.js
+index.js

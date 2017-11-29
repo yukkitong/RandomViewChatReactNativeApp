@@ -43,19 +43,26 @@ export default class AvatarWrapper extends Component {
           <Avatar
             xlarge
             rounded
-            icon={{name: "user"}}
-            source={{uri: "http://image.ytn.co.kr/osen/2017/09/20170922_1506039163_43978600_1.jpg"}}
-            onPress={() => console.log("Works!")}
-            activeOpacity={0.7}
-            imageProps={{borderWidth: 1}}
+            icon={{ name: 'user' }}
+            source={{ 
+              uri: 'http://image.ytn.co.kr/osen/2017/09/20170922_1506039163_43978600_1.jpg' 
+            }}
+            onPress={() => console.log('Works!')}
+            activeOpacity={ 0.7 }
+            imageProps={{ borderWidth: 1 }}
           />
         </View>
-        <View style={{flex: 1, justifyContent: 'flex-start', width: 200, alignItems: 'center'}}>
+        <View style={{ 
+          flex: 1, 
+          justifyContent: 'flex-start', 
+          width: 200, 
+          alignItems: 'center' 
+        }}>
           {/* <Button title='BUTTON' /> */}
-          <Button buttonStyle={{borderRadius: 10, padding: 20,}}
-            containerViewStyle={{borderRadius: 10,  alignSelf: 'center'}}
+          <Button buttonStyle={{ borderRadius: 10, padding: 20, }}
+            containerViewStyle={{ borderRadius: 10, alignSelf: 'center' }}
             raised
-            icon={{name: 'cached'}}
+            icon={{ name: 'cached' }}
             title='BUTTON WITH ICON' />
           {/* <CheckBox
             center
