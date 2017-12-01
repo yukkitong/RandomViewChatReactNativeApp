@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './app/AvatarWrapper';
+import App from './App';
 
 AppRegistry.registerComponent('Example01', () => App);
