@@ -4,6 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
+  StatusBar
 } from 'react-native';
 
 import { 
@@ -30,10 +31,14 @@ export default class AvatarWrapper extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
+        <StatusBar
+          backgroundColor="#0000dd88"
+          barStyle="light-content"
+        />
         <Header
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff'} }}
-          outerContainerStyles={{ backgroundColor: '#3D6DCC', alignSelf:'stretch' }}
-          innerContainerStyles={{ justifyContent: 'space-around',}}
+          centerComponent={{ text: 'PROFILE', style: { color: '#fff', fontSize: 20} }}
+          outerContainerStyles={{ backgroundColor: 'blue', alignSelf:'stretch', height: 54, justifyContent: 'center', padding: 0 }}
+          innerContainerStyles={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', }}
         />
         <View style={{
           flex: 2,
