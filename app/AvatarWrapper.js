@@ -13,6 +13,28 @@ import {
   CheckBox,
 } from 'react-native-elements';
 
+const MyAvater = () => {
+  return (
+    <View style={{
+      flex: 2,
+      alignItems: 'center', 
+      justifyContent: 'center',
+    }}>
+      <Avatar
+        xlarge
+        rounded
+        icon={{ name: 'user' }}
+        source={{ 
+          uri: 'http://image.ytn.co.kr/osen/2017/09/20170922_1506039163_43978600_1.jpg' 
+        }}
+        onPress={() => console.log('Works!')}
+        activeOpacity={ 0.7 }
+        imageProps={{ borderWidth: 1 }}
+      />
+    </View>
+  )
+}
+
 
 export default class AvatarWrapper extends Component {
 
@@ -35,23 +57,7 @@ export default class AvatarWrapper extends Component {
           outerContainerStyles={{ backgroundColor: '#3D6DCC', alignSelf:'stretch' }}
           innerContainerStyles={{ justifyContent: 'space-around',}}
         />
-        <View style={{
-          flex: 2,
-          alignItems: 'center', 
-          justifyContent: 'center',
-        }}>
-          <Avatar
-            xlarge
-            rounded
-            icon={{ name: 'user' }}
-            source={{ 
-              uri: 'http://image.ytn.co.kr/osen/2017/09/20170922_1506039163_43978600_1.jpg' 
-            }}
-            onPress={() => console.log('Works!')}
-            activeOpacity={ 0.7 }
-            imageProps={{ borderWidth: 1 }}
-          />
-        </View>
+        <MyAvater />
         <View style={{ 
           flex: 1, 
           justifyContent: 'flex-start', 
