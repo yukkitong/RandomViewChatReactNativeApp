@@ -3,7 +3,8 @@ import {
     Platform,
     StyleSheet,
     View,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native';
 
 import {
@@ -13,8 +14,19 @@ import {
     PagerDotIndicator
 } from 'rn-viewpager';
 
+import { Actions } from 'react-native-router-flux';
+
 export default class AppIntro extends React.Component
 {
+    constructor(props) {
+        super(props);
+        this.onMoveToNext = this.onMoveToNext.bind(this);
+    }
+
+    onMoveToNext() {
+        Actions.profile();
+    }
+
     render() {
         return (
             <View style={{flex:1}}>
@@ -29,6 +41,10 @@ export default class AppIntro extends React.Component
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
                         <Text>page three</Text>
+                        <TouchableOpacity
+                            onPress={this.onMoveToNext}>
+                            <Text>NEXT</Text>
+                        </TouchableOpacity>
                     </View>
                 </IndicatorViewPager>
 
