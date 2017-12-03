@@ -13,6 +13,8 @@ import {
   CheckBox,
 } from 'react-native-elements';
 
+import ModalHeader from './component/ModalHeader'
+
 const MyAvater = () => {
   return (
     <View style={{
@@ -52,11 +54,7 @@ export default class AvatarWrapper extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <Header
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff'} }}
-          outerContainerStyles={{ backgroundColor: '#3D6DCC', alignSelf:'stretch' }}
-          innerContainerStyles={{ justifyContent: 'space-around',}}
-        />
+        <ModalHeader tabs={['TEST1', 'TEST2']}/>
         <MyAvater />
         <View style={{ 
           flex: 1, 
