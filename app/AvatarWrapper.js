@@ -4,6 +4,8 @@ import {
   StyleSheet,
   View,
   Text,
+  StatusBar,
+  TouchableOpacity
 } from 'react-native';
 
 import { 
@@ -44,10 +46,15 @@ export default class AvatarWrapper extends Component {
 
   constructor(props) {
     super(props);
-    this.handleImageChange = this.handleImageChange.bind(this);
+    this.onShowPhotoBigger = this.onShowPhotoBigger.bind(this);
+    this.onCaptureCamera = this.onCaptureCamera.bind(this);
   }
 
-  handleImageChange() {
+  onShowPhotoBigger() {
+
+  }
+
+  onCaptureCamera() {
 
   }
 
@@ -62,21 +69,11 @@ export default class AvatarWrapper extends Component {
           width: 200, 
           alignItems: 'center' 
         }}>
-          {/* <Button title='BUTTON' /> */}
           <Button buttonStyle={{ borderRadius: 10, padding: 20, }}
             containerViewStyle={{ borderRadius: 10, alignSelf: 'center' }}
             raised
-            icon={{ name: 'cached' }}
-            title='BUTTON WITH ICON' />
-          {/* <CheckBox
-            center
-            title='Click Here to Remove This Item'
-            iconRight
-            iconType='material'
-            checkedIcon='clear'
-            uncheckedIcon='add'
-            checkedColor='red'
-            checked={this.state.checked} />*/}
+            icon={{ name: 'home' }}
+            title="BUTTON" />
         </View>
       </View>
     );
@@ -89,6 +86,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ddd',
   },
-  avatar: {
-  }
 });
