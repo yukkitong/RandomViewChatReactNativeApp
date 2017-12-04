@@ -4,6 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
+  Alert,
 } from 'react-native';
 
 import { 
@@ -54,7 +55,10 @@ export default class AvatarWrapper extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <ModalHeader tabs={['TEST1', 'TEST2']}/>
+        <ModalHeader tabs={[{title: 'TEST1'}, {title: 'TEST2'}]}
+          onPress={tab => {
+            Alert.alert(tab.title);
+          }}/>
         <MyAvater />
         <View style={{ 
           flex: 1, 

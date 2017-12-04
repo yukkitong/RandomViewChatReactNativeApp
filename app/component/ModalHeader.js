@@ -9,22 +9,26 @@ import {
 export default class ModalHeader extends React.Component {
   constructor(props) {
     super(props);
+    this.onPress = this.props.onPress || (() => {});
+    this.onClose = this.props.onClose || (() => {});
+
+    this.onPress = this.onPress.bind(this);
+    this.onClose = this.onClose.bind(this);
   }
 
   renderTabs() {
     let tabs = this.props.tabs;
     if (!tabs) return;
     return tabs.map((tab, index) => {
-      return <Text key={index} style={{
-          padding: 10, 
-          textAlign: 'center',
-          
-        }}>tab.title</Text>;
+      return (
+        <TouchableOpacity onPress={() => this.onPress(tab, index)}>
+          <Text key={index} style={{
+            padding: 10, 
+            textAlign: 'center',
+          }}>{tab.title}</Text>
+        </TouchableOpacity>
+      );
     });
-  }
-
-  onClose() {
-    // TODO
   }
 
   render() {

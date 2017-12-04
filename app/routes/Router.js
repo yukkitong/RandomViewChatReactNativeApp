@@ -14,7 +14,10 @@ export default () => {
           initial
           hideNavBar>
         </Scene>
-        <Scene key="profile" component={ Profile }>
+        <Scene 
+          key="profile" 
+          component={ Profile }
+          hideNavBar>
         </Scene>
       </Scene>
     </Router>
