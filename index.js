@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './app/routes/Router';
+import PopupUserInfo from './app/component/PopupUserInfo';
 
-AppRegistry.registerComponent('Example01', () => App);
+AppRegistry.registerComponent('Example01', () => PopupUserInfo);
