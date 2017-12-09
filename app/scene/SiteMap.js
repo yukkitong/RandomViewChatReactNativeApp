@@ -85,8 +85,10 @@ const styles = StyleSheet.create({
   button: {
     color: 'white',
     fontSize: 20,
-    backgroundColor: 'black',
+    backgroundColor: '#34495e',
     padding: 10,
     margin: 4,
+    textShadowOffset: { width: 1, height: 1 },
+    fontWeight: 'bold',
   },
 });
