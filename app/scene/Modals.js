@@ -6,7 +6,8 @@ import {
   Text,
   Picker,
   Switch,
-  ActivityIndicator
+  ActivityIndicator,
+  AsyncStorage
 } from 'react-native';
 import Modal from 'react-native-modalbox';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -203,7 +204,22 @@ export class Inquiry extends React.Component {
 // 선호성별
 export class FavGender extends React.Component {
 
-  state = { gender: 'all' };
+  constructor(props) {
+    super(props);
+    this.state = { gender: 'all' };
+  }
+
+  componentDidMount() {
+    this.get().then(gender => this.setState({ gender }));
+  }
+
+  async get() {
+    return await AsyncStorage.getItem('fav-gender');
+  }
+
+  async set(gender) {
+    await AsyncStorage.setItem('fav-gender', gender);
+  }
 
   open = () => this.modal.open();
   close = () => this.modal.close();
@@ -222,7 +238,10 @@ export class FavGender extends React.Component {
             <Picker
               mode="dropdown"
               selectedValue={this.state.gender}
-              onValueChange={(itemValue, itemIndex) => this.setState({gender: itemValue})}>
+              onValueChange={(itemValue, itemIndex) => {
+                this.set(itemValue);
+                this.setState({gender: itemValue});
+              }}>
               <Picker.Item label="모두" value="all" />
               <Picker.Item label="남자" value="male" />
               <Picker.Item label="여자" value="female" />
