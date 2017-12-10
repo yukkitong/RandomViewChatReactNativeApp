@@ -20,7 +20,6 @@ export default () => {
         <Scene key="overview" title="Overview" hideNavBar={true} component={Overview} />
         <Scene key="chatHome" title="Chat Home" component={ChatHome} />
         <Scene key="users" title="Users" component={Users} />
-        <Scene key="userDetail" title="User Detail" component={UserDetail} />
         <Scene key="moment" title="Moment" component={Moment} />
         <Scene key="momentDetail" title="Moment Detail" component={MomentDetail} />
       </Scene>
