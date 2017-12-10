@@ -35,81 +35,81 @@ export default class SiteMap extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <ScrollView style={{ flex: 1 }}>
-          <TouchableOpacity onPress={() => Actions.login() }>
+          <TouchableOpacity onPress={ () => Actions.login() }>
             <Text style={styles.button}>로그인</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.register() }>
+          <TouchableOpacity onPress={ () => Actions.register() }>
             <Text style={styles.button}>회원가입</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.overview() }>
+          <TouchableOpacity onPress={ () => Actions.overview() }>
             <Text style={styles.button}>오버뷰</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.chatHome() }>
+          <TouchableOpacity onPress={ () => Actions.chatHome() }>
             <Text style={styles.button}>채팅홈</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.users() }>
+          <TouchableOpacity onPress={ () => Actions.users() }>
             <Text style={styles.button}>사용자-리스트</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.userDetail() }>
+          <TouchableOpacity onPress={ () => Actions.userDetail() }>
             <Text style={styles.button}>사용자-상세</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.moment() }>
+          <TouchableOpacity onPress={ () => Actions.moment() }>
             <Text style={styles.button}>모멘트-리스트</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Actions.momentDetail() }>
+          <TouchableOpacity onPress={ () => Actions.momentDetail() }>
             <Text style={styles.button}>모멘트-상세</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['text_chatting'].open() }>
-            <Text style={styles.button}>텍스트 챗팅</Text>
+            onPress={ () => this.modal['text_chatting'].open() }>
+            <Text style={styles.button}>텍스트 챗팅 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['notice'].open() }>
-            <Text style={styles.button}>공지사항</Text>
+            onPress={ () => this.modal['notice'].open() }>
+            <Text style={styles.button}>공지사항 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => this.modal['free_charging'].open() }>
-            <Text style={styles.button}>무료충전</Text>
+            onPress={ () => this.modal['free_charging'].open() }>
+            <Text style={styles.button}>무료충전 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity   
-            onPress={() => this.modal['store'].open() }>
-            <Text style={styles.button}>상점</Text>
+            onPress={ () => this.modal['store'].open() }>
+            <Text style={styles.button}>상점 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['noti_setting'].open() }>
-            <Text style={styles.button}>알림설정</Text>
+            onPress={ () => this.modal['noti_setting'].open() }>
+            <Text style={styles.button}>알림설정 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['fav_gender'].open() }>
-            <Text style={styles.button}>선호성별</Text>
+            onPress={ () => this.modal['fav_gender'].open() }>
+            <Text style={styles.button}>선호성별 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['fav_country'].open() }>
-            <Text style={styles.button}>선호지역</Text>
+            onPress={ () => this.modal['fav_country'].open() }>
+            <Text style={styles.button}>선호지역 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => this.modal['followers'].open() }>
-            <Text style={styles.button}>팔로워</Text>
+            onPress={ () => this.modal['followers'].open() }>
+            <Text style={styles.button}>팔로워 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => this.modal['inquiry'].open() }>
-            <Text style={styles.button}>문의하기</Text>
+            onPress={ () => this.modal['inquiry'].open() }>
+            <Text style={styles.button}>문의하기 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['pay_history'].open() }>
-            <Text style={styles.button}>사용내역</Text>
+            onPress={ () => this.modal['pay_history'].open() }>
+            <Text style={styles.button}>사용내역 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['contract'].open() }>
-            <Text style={styles.button}>이용약관</Text>
+            onPress={ () => this.modal['contract'].open() }>
+            <Text style={styles.button}>이용약관 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.modal['about'].open() }>
-            <Text style={styles.button}>저작권명시</Text>
+            onPress={ () => this.modal['about'].open() }>
+            <Text style={styles.button}>저작권명시 - 모달</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            onPress={() => this.modal['request_cash'].open() }>
-            <Text style={styles.button}>캐시전환</Text>
+            onPress={ () => this.modal['request_cash'].open() }>
+            <Text style={styles.button}>캐시전환 - 모달</Text>
           </TouchableOpacity>
         </ScrollView>
 
