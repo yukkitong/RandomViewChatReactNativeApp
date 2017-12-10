@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Scene } from 'react-native-router-flux';
+import { Router, Scene, Modal, Stack } from 'react-native-router-flux';
 import SiteMap from './app/scene/SiteMap';
 import Login from './app/scene/Login';
 import Register from './app/scene/Register';
