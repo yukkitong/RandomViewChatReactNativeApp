@@ -32,6 +32,11 @@ const Header = ({title, onClose}) => {
   );
 }
 
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  onClose: PropTypes.func
+};
+
 // 저작권
 export class About extends React.Component {
   constructor(props) {
@@ -55,7 +60,7 @@ export class About extends React.Component {
         style={{ height: 240, width: '96%' }}
       >
         <Header title="View Chat 1.0" onClose={ () => this.modal.close() } />
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
           <Text style={[styles.center, { fontSize: 14 }]}>
             뷰챗은 랜덤영상채팅 어플리케이션입니다.
           </Text>
@@ -90,7 +95,7 @@ export class Contract extends React.Component {
         ref={ (comp) => this.modal = comp }
       >
         <Header title="이용약관" onClose={ () => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -116,7 +121,7 @@ export class PayHistory extends React.Component {
       >
         <Header title="사용내역" onClose={ () => this.modal.close() }/>
         <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
-          <View style={{ backgroundColor: '#ecf0f1' }}>
+          <View style={styles.picker}>
             <Picker
               mode="dropdown"
               selectedValue={this.state.type}
@@ -154,7 +159,7 @@ export class Inquiry extends React.Component {
       >
         <Header title="문의하기" onClose={ () => this.modal.close() }/>
         <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
-          <View style={{ backgroundColor: '#ecf0f1' }}>
+          <View style={styles.picker}>
             <Picker
               mode="dropdown"
               selectedValue={this.state.type}
@@ -194,7 +199,7 @@ export class FavGender extends React.Component {
       >
         <Header title="선호하는 성별?" onClose={ () => this.modal.close() }/>
         <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
-          <View style={{ backgroundColor: '#ecf0f1' }}>
+          <View style={styles.picker}>
             <Picker
               mode="dropdown"
               selectedValue={this.state.gender}
@@ -229,11 +234,11 @@ export class FavCountry extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 340 }}
+        style={{ height: 240 }}
       >
         <Header title="선호하는 지역?" onClose={ () => this.modal.close() }/>
         <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
-          <View style={{ backgroundColor: '#ecf0f1' }}>
+          <View style={styles.picker}>
             <Picker
               mode="dropdown"
               selectedValue={this.state.area}
@@ -269,7 +274,7 @@ export class NotiSetting extends React.Component {
         style={{ height: 340 }}
       >
         <Header title="알림설정" onClose={ () => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
           <View style={{ flex: 1 }} />
           <TouchableOpacity onPress={ () => this.modal.close() }>
             <Text style={[styles.center, styles.button]}>확인</Text>
@@ -296,7 +301,7 @@ export class Followers extends React.Component {
         style={{ height: 340 }}
       >
         <Header title="팔로워" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -318,7 +323,7 @@ export class UserInfo extends React.Component {
         style={{ height: 300, width: '96%' }}
       >
         <Header title="" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -341,7 +346,7 @@ export class Store extends React.Component {
         ref={ (comp) => this.modal = comp }
       >
         <Header title="상점" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -364,7 +369,7 @@ export class FreeCharging extends React.Component {
         ref={ (comp) => this.modal = comp }
       >
         <Header title="무료충전" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -387,7 +392,7 @@ export class TextChatting extends React.Component {
         ref={ (comp) => this.modal = comp }
       >
         <Header title="챗팅" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -410,7 +415,7 @@ export class Notice extends React.Component {
         ref={ (comp) => this.modal = comp }
       >
         <Header title="공지사항" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -433,7 +438,7 @@ export class RequestCash extends React.Component {
         style={{ height: 340 }}
       >
         <Header title="캐시전환" onClose={() => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
+        <View style={styles.content}>
         </View>
       </Modal>
     );
@@ -450,5 +455,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#2c3e50', 
     color: 'white', 
     fontSize: 18
-  }
+  },
+  content: {
+    flex: 1, 
+    justifyContent: 'center', 
+    padding: 10
+  },
+  picker: { backgroundColor: '#ecf0f1' }
 });
