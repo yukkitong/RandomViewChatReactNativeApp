@@ -30,7 +30,7 @@ export default () => {
         <Scene key="sitemap" title="SiteMap" component={SiteMap} initial={true} />
         <Scene key="login" title="Login" component={Login} />
         <Scene key="register" title="Register" component={Register} />
-        <Scene key="overview" title="Overview" component={Overview} />
+        <Scene key="overview" title="Overview" hideNavBar={true} component={Overview} />
         <Scene key="chatHome" title="Chat Home" component={ChatHome} />
         <Scene key="users" title="Users" component={Users} />
         <Scene key="userDetail" title="User Detail" component={UserDetail} />
