@@ -45,7 +45,9 @@ export class About extends React.Component {
   }
 
   onShowContract() {
-
+    if (this.contract) {
+      this.contract.open();
+    }
   }
 
   open() {
@@ -74,6 +76,8 @@ export class About extends React.Component {
         <TouchableOpacity onPress={ this.onShowContract }>
           <Text style={[styles.center, styles.button]}>이용약관 보기</Text>
         </TouchableOpacity>
+
+        <Contract ref={comp => this.contract = comp} />
       </Modal>
     );
   }
@@ -118,7 +122,7 @@ export class PayHistory extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={[{ height: 340 }, styles.modal]}
+        style={[{ height: 400 }, styles.modal]}
       >
         <Header title="사용내역" onClose={ () => this.modal.close() }/>
         <View style={[styles.content, { justifyContent: 'flex-start' }]}>
@@ -273,10 +277,12 @@ export class NotiSetting extends React.Component {
         <Header title="알림설정" onClose={ () => this.modal.close() }/>
         <View style={styles.content}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
-            <Text style={{fontSize: 20}}>챗팅알림</Text><Switch onTintColor="#e67e22" value={false} />
+            <Text style={{fontSize: 20}}>챗팅알림</Text>
+            <Switch onTintColor="#e67e22" value={false} />
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
-            <Text style={{fontSize: 20}}>쪽지알림</Text><Switch onTintColor="#e67e22" value={true} />
+            <Text style={{fontSize: 20}}>쪽지알림</Text>
+            <Switch onTintColor="#e67e22" value={true} />
           </View>
         </View>
       </Modal>
