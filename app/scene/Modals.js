@@ -5,6 +5,7 @@ import {
   View,
   Text,
   Picker,
+  Switch
 } from 'react-native';
 import Modal from 'react-native-modalbox';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -15,7 +16,6 @@ const Header = ({title, onClose}) => {
     <View style={{ 
       flexDirection: 'row', 
       justifyContent: 'space-between',
-      padding: 10
     }}>
       <Text style={{ 
         color: 'black',
@@ -57,7 +57,7 @@ export class About extends React.Component {
       <Modal
         position="center" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 240, width: '96%' }}
+        style={[{ height: 240, width: '96%' }, styles.modal]}
       >
         <Header title="View Chat 1.0" onClose={ () => this.modal.close() } />
         <View style={styles.content}>
@@ -71,7 +71,7 @@ export class About extends React.Component {
             Version 1.0.0
           </Text>
         </View>
-        <TouchableOpacity onPress={ this.onShowContract } style={{ padding: 10 }}>
+        <TouchableOpacity onPress={ this.onShowContract }>
           <Text style={[styles.center, styles.button]}>이용약관 보기</Text>
         </TouchableOpacity>
       </Modal>
@@ -93,6 +93,7 @@ export class Contract extends React.Component {
         position="bottom"
         coverScreen={true}
         ref={ (comp) => this.modal = comp }
+        style={ styles.modal }
       >
         <Header title="이용약관" onClose={ () => this.modal.close() }/>
         <View style={styles.content}>
@@ -117,10 +118,10 @@ export class PayHistory extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 340 }}
+        style={[{ height: 340 }, styles.modal]}
       >
         <Header title="사용내역" onClose={ () => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
+        <View style={[styles.content, { justifyContent: 'flex-start' }]}>
           <View style={styles.picker}>
             <Picker
               mode="dropdown"
@@ -130,11 +131,10 @@ export class PayHistory extends React.Component {
               <Picker.Item label="캐시내역" value="cash" />
             </Picker>
           </View>
-          <View style={{ flex: 1 }} />
-          <TouchableOpacity onPress={ () => this.modal.close() }>
-            <Text style={[styles.center, styles.button]}>확인</Text>
-          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={ () => this.modal.close() }>
+          <Text style={[styles.center, styles.button]}>확인</Text>
+        </TouchableOpacity>
       </Modal>
     );
   }
@@ -155,10 +155,10 @@ export class Inquiry extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 240 }}
+        style={[{ height: 240 }, styles.modal]}
       >
         <Header title="문의하기" onClose={ () => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
+        <View style={[styles.content, { justifyContent: 'flex-start' }]}>
           <View style={styles.picker}>
             <Picker
               mode="dropdown"
@@ -170,11 +170,10 @@ export class Inquiry extends React.Component {
               <Picker.Item label="기타" value="misc" />
             </Picker>
           </View>
-          <View style={{ flex: 1 }} />
-          <TouchableOpacity onPress={ () => this.modal.close() }>
-            <Text style={[styles.center, styles.button]}>확인</Text>
-          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={ () => this.modal.close() }>
+          <Text style={[styles.center, styles.button]}>확인</Text>
+        </TouchableOpacity>
       </Modal>
     );
   }
@@ -195,10 +194,10 @@ export class FavGender extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 240 }}
+        style={[{ height: 180 }, styles.modal]}
       >
         <Header title="선호하는 성별?" onClose={ () => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
+        <View style={styles.content}>
           <View style={styles.picker}>
             <Picker
               mode="dropdown"
@@ -209,11 +208,10 @@ export class FavGender extends React.Component {
               <Picker.Item label="여자" value="female" />
             </Picker>
           </View>
-          <View style={{ flex: 1 }} />
-          <TouchableOpacity onPress={() => this.modal.close() }>
-            <Text style={[styles.center, styles.button]}>확인</Text>
-          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={() => this.modal.close() }>
+          <Text style={[styles.center, styles.button]}>확인</Text>
+        </TouchableOpacity>
       </Modal>
     );
   }
@@ -234,10 +232,10 @@ export class FavCountry extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 240 }}
+        style={[{ height: 180 }, styles.modal]}
       >
         <Header title="선호하는 지역?" onClose={ () => this.modal.close() }/>
-        <View style={{ flex: 1, justifyContent: 'flex-start', padding: 10 }}>
+        <View style={styles.content}>
           <View style={styles.picker}>
             <Picker
               mode="dropdown"
@@ -248,11 +246,10 @@ export class FavCountry extends React.Component {
               <Picker.Item label="영국" value="uk" />
             </Picker>
           </View>
-          <View style={{ flex: 1 }} />
-          <TouchableOpacity onPress={ () => this.modal.close() }>
-            <Text style={[styles.center, styles.button]}>확인</Text>
-          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={ () => this.modal.close() }>
+          <Text style={[styles.center, styles.button]}>확인</Text>
+        </TouchableOpacity>
       </Modal>
     );
   }
@@ -271,14 +268,16 @@ export class NotiSetting extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 340 }}
+        style={[{ height: 200 }, styles.modal]}
       >
         <Header title="알림설정" onClose={ () => this.modal.close() }/>
         <View style={styles.content}>
-          <View style={{ flex: 1 }} />
-          <TouchableOpacity onPress={ () => this.modal.close() }>
-            <Text style={[styles.center, styles.button]}>확인</Text>
-          </TouchableOpacity>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
+            <Text style={{fontSize: 20}}>챗팅알림</Text><Switch onTintColor="#e67e22" value={false} />
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
+            <Text style={{fontSize: 20}}>쪽지알림</Text><Switch onTintColor="#e67e22" value={true} />
+          </View>
         </View>
       </Modal>
     );
@@ -298,7 +297,7 @@ export class Followers extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 340 }}
+        style={[{ height: 340 }, styles.modal]}
       >
         <Header title="팔로워" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -320,7 +319,7 @@ export class UserInfo extends React.Component {
       <Modal
         position="center" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 300, width: '96%' }}
+        style={[{ height: 300, width: '96%' }, styles.modal]}
       >
         <Header title="" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -344,6 +343,7 @@ export class Store extends React.Component {
         position="bottom" 
         coverScreen={true}
         ref={ (comp) => this.modal = comp }
+        style={ styles.modal }
       >
         <Header title="상점" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -367,6 +367,7 @@ export class FreeCharging extends React.Component {
         position="bottom" 
         coverScreen={true}
         ref={ (comp) => this.modal = comp }
+        style={ styles.modal }
       >
         <Header title="무료충전" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -390,6 +391,7 @@ export class TextChatting extends React.Component {
         position="bottom" 
         coverScreen={true}
         ref={ (comp) => this.modal = comp }
+        style={ styles.modal }
       >
         <Header title="챗팅" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -413,6 +415,7 @@ export class Notice extends React.Component {
         position="bottom" 
         coverScreen={true}
         ref={ (comp) => this.modal = comp }
+        style={ styles.modal }
       >
         <Header title="공지사항" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -435,7 +438,7 @@ export class RequestCash extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ (comp) => this.modal = comp } 
-        style={{ height: 340 }}
+        style={[{ height: 340 }, styles.modal]}
       >
         <Header title="캐시전환" onClose={() => this.modal.close() }/>
         <View style={styles.content}>
@@ -450,6 +453,11 @@ const styles = StyleSheet.create({
   center: {
     textAlign: 'center'
   },
+  modal: {
+    backgroundColor: '#ffffffe0',
+    justifyContent: 'space-between',
+    padding: 10
+  },
   button: {
     padding: 10, 
     backgroundColor: '#2c3e50', 
@@ -457,9 +465,14 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   content: {
-    flex: 1, 
-    justifyContent: 'center', 
-    padding: 10
+    flex: 1,
+    justifyContent: 'center',
+    paddingTop: 10,
+    paddingBottom: 10
   },
-  picker: { backgroundColor: '#ecf0f1' }
+  picker: { 
+    backgroundColor: '#ecf0f1',
+    borderWidth: 1,
+    borderColor: '#7f8c8d'
+  }
 });
