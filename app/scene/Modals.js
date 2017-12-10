@@ -47,15 +47,11 @@ Header.propTypes = {
 const Indicator = ({size, color, visible}) => {
   size = size || 'large';
   visible = typeof visible === 'undefined' ? false : visible;
-  if (visible) {
-    return (
-      <View style={styles.indicator}>
-        <ActivityIndicator size={size} />
-      </View>
-    );
-  } else {
-    return <View />;
-  }
+  return (
+    <View style={styles.indicator}>
+      <ActivityIndicator size={size} animating={visible} />
+    </View>
+  );
 }
 
 Indicator.propTypes = {
@@ -311,7 +307,7 @@ export class NotiSetting extends React.Component {
 // 팔로워
 export class Followers extends React.Component {
 
-  state = { loading: true };
+  state = { loading: false };
   
   open = () => this.modal.open();
   close = () => this.modal.close();
