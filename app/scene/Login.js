@@ -8,6 +8,7 @@ import {
   Button
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import PropTypes from 'prop-types';
 
 const Input = ({email, password, onChangeEmail, onChangePassword, onSubmit}) => (
   <View style={{ flex: 2, justifyContent: 'center' }}>
@@ -26,6 +27,14 @@ const Input = ({email, password, onChangeEmail, onChangePassword, onSubmit}) => 
     <Button title="login" onPress={onSubmit} />
   </View>
 );
+
+Input.propTypes = {
+  email: PropTypes.string,
+  password: PropTypes.string,
+  onChangeEmail: PropTypes.func.isRequired,
+  onChangePassword: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func
+};
 
 export default class Login extends React.Component {
   constructor(props) {
