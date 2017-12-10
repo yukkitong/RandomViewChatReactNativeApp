@@ -50,14 +50,15 @@ export default class SiteMap extends React.Component {
           <TouchableOpacity onPress={ () => Actions.users() }>
             <Text style={styles.button}>사용자-리스트</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={ () => Actions.userDetail() }>
-            <Text style={styles.button}>사용자-상세</Text>
-          </TouchableOpacity>
           <TouchableOpacity onPress={ () => Actions.moment() }>
             <Text style={styles.button}>모멘트-리스트</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={ () => Actions.momentDetail() }>
             <Text style={styles.button}>모멘트-상세</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            onPress={ () => this.modal['user_info'].open() }>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>사용자-상세</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['text_chatting'].open() }>
