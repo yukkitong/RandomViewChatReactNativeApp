@@ -50,18 +50,17 @@ export class About extends React.Component {
     }
   }
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         position="center" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 240, width: '96%' }, styles.modal]}
       >
-        <Header title="View Chat 1.0" onClose={ () => this.modal.close() } />
+        <Header title="View Chat 1.0" onClose={ this.close } />
         <View style={styles.content}>
           <Text style={[styles.center, { fontSize: 14 }]}>
             뷰챗은 랜덤영상채팅 어플리케이션입니다.
@@ -86,9 +85,8 @@ export class About extends React.Component {
 // 이용약관
 export class Contract extends React.Component {
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
@@ -96,10 +94,10 @@ export class Contract extends React.Component {
         entry="bottom"
         position="bottom"
         coverScreen={true}
-        ref={ (comp) => this.modal = comp }
+        ref={ comp => this.modal = comp }
         style={ styles.modal }
       >
-        <Header title="이용약관" onClose={ () => this.modal.close() }/>
+        <Header title="이용약관" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -112,19 +110,18 @@ export class PayHistory extends React.Component {
 
   state = { type: 'heart' };
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => tis.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 400 }, styles.modal]}
       >
-        <Header title="사용내역" onClose={ () => this.modal.close() }/>
+        <Header title="사용내역" onClose={ this.close }/>
         <View style={[styles.content, { justifyContent: 'flex-start' }]}>
           <View style={styles.picker}>
             <Picker
@@ -149,19 +146,18 @@ export class Inquiry extends React.Component {
 
   state = { type: 'heart' };
   
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 240 }, styles.modal]}
       >
-        <Header title="문의하기" onClose={ () => this.modal.close() }/>
+        <Header title="문의하기" onClose={ this.close }/>
         <View style={[styles.content, { justifyContent: 'flex-start' }]}>
           <View style={styles.picker}>
             <Picker
@@ -188,19 +184,18 @@ export class FavGender extends React.Component {
 
   state = { gender: 'all' };
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 180 }, styles.modal]}
       >
-        <Header title="선호하는 성별?" onClose={ () => this.modal.close() }/>
+        <Header title="선호하는 성별?" onClose={ this.close }/>
         <View style={styles.content}>
           <View style={styles.picker}>
             <Picker
@@ -226,19 +221,18 @@ export class FavCountry extends React.Component {
 
   state = { area: 'ko' }
   
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 180 }, styles.modal]}
       >
-        <Header title="선호하는 지역?" onClose={ () => this.modal.close() }/>
+        <Header title="선호하는 지역?" onClose={ this.close }/>
         <View style={styles.content}>
           <View style={styles.picker}>
             <Picker
@@ -261,20 +255,19 @@ export class FavCountry extends React.Component {
 
 // 알림설정
 export class NotiSetting extends React.Component {
-
-  open() {
-    this.modal.open();
-  }
+  
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 200 }, styles.modal]}
       >
-        <Header title="알림설정" onClose={ () => this.modal.close() }/>
+        <Header title="알림설정" onClose={ this.close }/>
         <View style={styles.content}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
             <Text style={{fontSize: 20}}>챗팅알림</Text>
@@ -292,20 +285,19 @@ export class NotiSetting extends React.Component {
 
 // 팔로워
 export class Followers extends React.Component {
-
-  open() {
-    this.modal.open();
-  }
+  
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 340 }, styles.modal]}
       >
-        <Header title="팔로워" onClose={() => this.modal.close() }/>
+        <Header title="팔로워" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -316,18 +308,17 @@ export class Followers extends React.Component {
 // 유저인포
 export class UserInfo extends React.Component {
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         position="center" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 300, width: '96%' }, styles.modal]}
       >
-        <Header title="" onClose={() => this.modal.close() }/>
+        <Header title="" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -338,9 +329,8 @@ export class UserInfo extends React.Component {
 // 상점
 export class Store extends React.Component {
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
@@ -348,10 +338,10 @@ export class Store extends React.Component {
         entry="bottom"
         position="bottom" 
         coverScreen={true}
-        ref={ (comp) => this.modal = comp }
+        ref={ comp => this.modal = comp }
         style={ styles.modal }
       >
-        <Header title="상점" onClose={() => this.modal.close() }/>
+        <Header title="상점" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -362,9 +352,8 @@ export class Store extends React.Component {
 // 무료충전
 export class FreeCharging extends React.Component {
 
-  open() {
-    this.modal.open();
-  }
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
@@ -372,10 +361,10 @@ export class FreeCharging extends React.Component {
         entry="bottom"
         position="bottom" 
         coverScreen={true}
-        ref={ (comp) => this.modal = comp }
+        ref={ comp => this.modal = comp }
         style={ styles.modal }
       >
-        <Header title="무료충전" onClose={() => this.modal.close() }/>
+        <Header title="무료충전" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -385,10 +374,9 @@ export class FreeCharging extends React.Component {
 
 // 챗팅
 export class TextChatting extends React.Component {
-  
-  open() {
-    this.modal.open();
-  }
+
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
@@ -396,10 +384,10 @@ export class TextChatting extends React.Component {
         entry="bottom"
         position="bottom" 
         coverScreen={true}
-        ref={ (comp) => this.modal = comp }
+        ref={ comp => this.modal = comp }
         style={ styles.modal }
       >
-        <Header title="챗팅" onClose={() => this.modal.close() }/>
+        <Header title="챗팅" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -409,10 +397,9 @@ export class TextChatting extends React.Component {
 
 // 공지사항
 export class Notice extends React.Component {
-  
-  open() {
-    this.modal.open();
-  }
+
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
@@ -420,10 +407,10 @@ export class Notice extends React.Component {
         entry="bottom"
         position="bottom" 
         coverScreen={true}
-        ref={ (comp) => this.modal = comp }
+        ref={ comp => this.modal = comp }
         style={ styles.modal }
       >
-        <Header title="공지사항" onClose={() => this.modal.close() }/>
+        <Header title="공지사항" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
@@ -433,20 +420,19 @@ export class Notice extends React.Component {
 
 // 캐시전환
 export class RequestCash extends React.Component {
-  
-  open() {
-    this.modal.open();
-  }
+
+  open = () => this.modal.open();
+  close = () => this.modal.close();
 
   render() {
     return (
       <Modal
         entry="bottom"
         position="bottom" 
-        ref={ (comp) => this.modal = comp } 
+        ref={ comp => this.modal = comp } 
         style={[{ height: 340 }, styles.modal]}
       >
-        <Header title="캐시전환" onClose={() => this.modal.close() }/>
+        <Header title="캐시전환" onClose={ this.close }/>
         <View style={styles.content}>
         </View>
       </Modal>
