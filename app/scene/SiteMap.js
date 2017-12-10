@@ -61,55 +61,55 @@ export default class SiteMap extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['text_chatting'].open() }>
-            <Text style={styles.button}>텍스트 챗팅 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>텍스트 챗팅</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['notice'].open() }>
-            <Text style={styles.button}>공지사항 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>공지사항</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={ () => this.modal['free_charging'].open() }>
-            <Text style={styles.button}>무료충전 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>무료충전</Text>
           </TouchableOpacity>
           <TouchableOpacity   
             onPress={ () => this.modal['store'].open() }>
-            <Text style={styles.button}>상점 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>상점</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['noti_setting'].open() }>
-            <Text style={styles.button}>알림설정 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>알림설정</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['fav_gender'].open() }>
-            <Text style={styles.button}>선호성별 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>선호성별</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['fav_country'].open() }>
-            <Text style={styles.button}>선호지역 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>선호지역</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={ () => this.modal['followers'].open() }>
-            <Text style={styles.button}>팔로워 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>팔로워</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={ () => this.modal['inquiry'].open() }>
-            <Text style={styles.button}>문의하기 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>문의하기</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['pay_history'].open() }>
-            <Text style={styles.button}>사용내역 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>사용내역</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['contract'].open() }>
-            <Text style={styles.button}>이용약관 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>이용약관</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={ () => this.modal['about'].open() }>
-            <Text style={styles.button}>저작권명시 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>저작권명시</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             onPress={ () => this.modal['request_cash'].open() }>
-            <Text style={styles.button}>캐시전환 - 모달</Text>
+            <Text style={[styles.button, {backgroundColor: '#2980b9'}]}>캐시전환</Text>
           </TouchableOpacity>
         </ScrollView>
 
