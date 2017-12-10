@@ -5,14 +5,20 @@ import {
   View,
   Text,
   Picker,
-  Switch
+  Switch,
+  ActivityIndicator
 } from 'react-native';
 import Modal from 'react-native-modalbox';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
 
-const Header = ({title, onClose}) => {
+const Header = ({title, onClose, style}) => {
+  style = Object.assign({
+      top: 0,
+      right: 0
+    }, style || {})
   return (
+    <View style={ style }>
     <View style={{ 
       flexDirection: 'row', 
       justifyContent: 'space-between',
@@ -29,12 +35,33 @@ const Header = ({title, onClose}) => {
         <Icon name="close" size={30} color="black" />
       </TouchableOpacity>
     </View>
+    </View>
   );
 }
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   onClose: PropTypes.func
+};
+
+const Indicator = ({size, color, visible}) => {
+  size = size || 'large';
+  visible = typeof visible === 'undefined' ? false : visible;
+  if (visible) {
+    return (
+      <View style={styles.indicator}>
+        <ActivityIndicator size={size} />
+      </View>
+    );
+  } else {
+    return <View />;
+  }
+}
+
+Indicator.propTypes = {
+  size: PropTypes.string,
+  //color: PropTypes.color,
+  visible: PropTypes.bool
 };
 
 // 저작권
@@ -108,10 +135,10 @@ export class Contract extends React.Component {
 // 결제내역
 export class PayHistory extends React.Component {
 
-  state = { type: 'heart' };
+  state = { type: 'heart', loading: true };
 
   open = () => this.modal.open();
-  close = () => tis.modal.close();
+  close = () => this.modal.close();
 
   render() {
     return (
@@ -132,10 +159,8 @@ export class PayHistory extends React.Component {
               <Picker.Item label="캐시내역" value="cash" />
             </Picker>
           </View>
+          <Indicator visible={this.state.loading} />
         </View>
-        <TouchableOpacity onPress={ () => this.modal.close() }>
-          <Text style={[styles.center, styles.button]}>확인</Text>
-        </TouchableOpacity>
       </Modal>
     );
   }
@@ -208,9 +233,9 @@ export class FavGender extends React.Component {
             </Picker>
           </View>
         </View>
-        <TouchableOpacity onPress={() => this.modal.close() }>
+        {/* <TouchableOpacity onPress={() => this.modal.close() }>
           <Text style={[styles.center, styles.button]}>확인</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </Modal>
     );
   }
@@ -219,7 +244,7 @@ export class FavGender extends React.Component {
 // 선호지역
 export class FavCountry extends React.Component {
 
-  state = { area: 'ko' }
+  state = { area: 'ko' };
   
   open = () => this.modal.open();
   close = () => this.modal.close();
@@ -245,9 +270,9 @@ export class FavCountry extends React.Component {
             </Picker>
           </View>
         </View>
-        <TouchableOpacity onPress={ () => this.modal.close() }>
+        {/* <TouchableOpacity onPress={ () => this.modal.close() }>
           <Text style={[styles.center, styles.button]}>확인</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </Modal>
     );
   }
@@ -285,6 +310,8 @@ export class NotiSetting extends React.Component {
 
 // 팔로워
 export class Followers extends React.Component {
+
+  state = { loading: true };
   
   open = () => this.modal.open();
   close = () => this.modal.close();
@@ -299,6 +326,7 @@ export class Followers extends React.Component {
       >
         <Header title="팔로워" onClose={ this.close }/>
         <View style={styles.content}>
+          <Indicator visible={this.state.loading} />
         </View>
       </Modal>
     );
@@ -307,6 +335,8 @@ export class Followers extends React.Component {
 
 // 유저인포
 export class UserInfo extends React.Component {
+
+  state = { loading: true };
 
   open = () => this.modal.open();
   close = () => this.modal.close();
@@ -318,8 +348,10 @@ export class UserInfo extends React.Component {
         ref={ comp => this.modal = comp } 
         style={[{ height: 300, width: '96%' }, styles.modal]}
       >
-        <Header title="" onClose={ this.close }/>
-        <View style={styles.content}>
+        <Header title="" onClose={ this.close } 
+          style={{ position: 'absolute', padding: 10 }} />
+        <View style={[styles.content]}>
+          <Indicator visible={this.state.loading} />
         </View>
       </Modal>
     );
@@ -328,6 +360,8 @@ export class UserInfo extends React.Component {
 
 // 상점
 export class Store extends React.Component {
+
+  state = { loading: true };
 
   open = () => this.modal.open();
   close = () => this.modal.close();
@@ -343,6 +377,7 @@ export class Store extends React.Component {
       >
         <Header title="상점" onClose={ this.close }/>
         <View style={styles.content}>
+          <Indicator visible={this.state.loading} />
         </View>
       </Modal>
     );
@@ -351,6 +386,8 @@ export class Store extends React.Component {
 
 // 무료충전
 export class FreeCharging extends React.Component {
+
+  state = { loading: true }; 
 
   open = () => this.modal.open();
   close = () => this.modal.close();
@@ -366,6 +403,7 @@ export class FreeCharging extends React.Component {
       >
         <Header title="무료충전" onClose={ this.close }/>
         <View style={styles.content}>
+          <Indicator visible={this.state.loading} />
         </View>
       </Modal>
     );
@@ -398,6 +436,8 @@ export class TextChatting extends React.Component {
 // 공지사항
 export class Notice extends React.Component {
 
+  state = { loading: true };
+
   open = () => this.modal.open();
   close = () => this.modal.close();
 
@@ -412,6 +452,7 @@ export class Notice extends React.Component {
       >
         <Header title="공지사항" onClose={ this.close }/>
         <View style={styles.content}>
+          <Indicator visible={this.state.loading} />
         </View>
       </Modal>
     );
@@ -466,5 +507,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
     borderWidth: 1,
     borderColor: '#7f8c8d'
+  },
+  indicator: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
