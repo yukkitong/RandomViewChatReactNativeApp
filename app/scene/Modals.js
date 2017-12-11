@@ -295,9 +295,28 @@ export class FavCountry extends React.Component {
 
 // 알림설정
 export class NotiSetting extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { messageOn: true, chattingOn: true };
+  }
+
+  componentDidMount() {
+    this.get()
+      .then(value => JSON.parse(value))
+      .then(value => this.setState(value));
+  }
   
   open = () => this.modal.open();
   close = () => this.modal.close();
+
+  async get() {
+    return await AsyncStorage.getItem('noti-settings');
+  }
+
+  async set(setting) {
+    await AsyncStorage.setItem('noti-settings', JSON.stringify(setting));
+  }
 
   render() {
     return (
@@ -309,13 +328,21 @@ export class NotiSetting extends React.Component {
       >
         <Header title="알림설정" onClose={ this.close }/>
         <View style={styles.content}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
+          <View style={{
+            flexDirection: 'row', 
+            justifyContent: 'space-between', 
+            padding: 10
+          }}>
             <Text style={{fontSize: 20}}>챗팅알림</Text>
-            <Switch onTintColor="#e67e22" value={false} />
+            <Switch onTintColor="#e67e22" value={this.state.chattingOn} />
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 10}}>
+          <View style={{
+            flexDirection: 'row', 
+            justifyContent: 'space-between', 
+            padding: 10
+          }}>
             <Text style={{fontSize: 20}}>쪽지알림</Text>
-            <Switch onTintColor="#e67e22" value={true} />
+            <Switch onTintColor="#e67e22" value={this.state.messageOn} />
           </View>
         </View>
       </Modal>
@@ -363,7 +390,9 @@ export class UserInfo extends React.Component {
         ref={ comp => this.modal = comp } 
         style={[{ height: 300, width: '96%' }, styles.modal]}
       >
-        <Header title="" onClose={ this.close } 
+        <Header 
+          title="" 
+          onClose={ this.close } 
           style={{ position: 'absolute', padding: 10 }} />
         <View style={[styles.content]}>
           <Indicator visible={this.state.loading} />
