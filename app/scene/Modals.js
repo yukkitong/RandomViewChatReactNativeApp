@@ -13,11 +13,8 @@ import Modal from 'react-native-modalbox';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
 
-const Header = ({title, onClose, style}) => {
-  style = Object.assign({
-      top: 0,
-      right: 0
-    }, style || {})
+const Header = ({ title, onClose, style = {} }) => {
+  style = Object.assign({ top: 0, right: 0 }, style)
   return (
     <View style={ style }>
     <View style={{ 
@@ -45,9 +42,7 @@ Header.propTypes = {
   onClose: PropTypes.func
 };
 
-const Indicator = ({size, color, visible}) => {
-  size = size || 'large';
-  visible = typeof visible === 'undefined' ? false : visible;
+const Indicator = ({ size = 'large', color, visible = false }) => {
   return (
     <View style={styles.indicator}>
       <ActivityIndicator size={size} animating={visible} />
@@ -57,7 +52,7 @@ const Indicator = ({size, color, visible}) => {
 
 Indicator.propTypes = {
   size: PropTypes.string,
-  //color: PropTypes.color,
+  // color: PropTypes.color,
   visible: PropTypes.bool
 };
 
