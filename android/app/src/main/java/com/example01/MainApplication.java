@@ -8,7 +8,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import com.evollu.react.fcm.FIRMessagingPackage;
+//import com.evollu.react.fcm.FIRMessagingPackage;
 import com.reactlibrary.RNUUIDGeneratorPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.oney.WebRTCModule.WebRTCModulePackage;
@@ -28,7 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new FIRMessagingPackage(),
+          //new FIRMessagingPackage(),  // NOTE FCM
           new RNUUIDGeneratorPackage(),
           new VectorIconsPackage(),
           new WebRTCModulePackage()
