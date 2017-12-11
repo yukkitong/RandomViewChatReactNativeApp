@@ -12,9 +12,11 @@
     "react-native": "0.50.4",
     "react-native-app-intro": "https://github.com/merryjs/react-native-app-intro",
     "react-native-elements": "^0.18.4",
+    "react-native-jwt-io": "^1.0.3",
     "react-native-modalbox": "^1.4.2",
     "react-native-router-flux": "^4.0.0-beta.24",
     "react-native-theme": "^0.1.8",
+    "react-native-uuid-generator": "^3.0.2",
     "react-native-vector-icons": "^4.4.2",
     "react-native-webrtc": "^1.58.3",
     "rn-viewpager": "^1.2.8"

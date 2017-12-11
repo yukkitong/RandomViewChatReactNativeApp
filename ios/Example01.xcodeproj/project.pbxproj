@@ -48,6 +48,7 @@
 		550F97FFA8A144E68135177C /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B702E3EF3FC4E3093230EA5 /* Octicons.ttf */; };
 		5333641C155D41C18DDD6850 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01B15F23307B439D93D78B38 /* SimpleLineIcons.ttf */; };
 		18AB1C4DF5B9482DB29ED07E /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3156251EE6884244BB63156C /* Zocial.ttf */; };
+		0834200749C141938DB66D73 /* libRNUUIDGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB78757E8C474CA226ECE1 /* libRNUUIDGenerator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,6 +289,8 @@
 		1B702E3EF3FC4E3093230EA5 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		01B15F23307B439D93D78B38 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3156251EE6884244BB63156C /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCC7CF3B820A433E9C380027 /* RNUUIDGenerator.xcodeproj */ = {isa = PBXFileReference; name = "RNUUIDGenerator.xcodeproj"; path = "../node_modules/react-native-uuid-generator/ios/RNUUIDGenerator.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		5AEB78757E8C474CA226ECE1 /* libRNUUIDGenerator.a */ = {isa = PBXFileReference; name = "libRNUUIDGenerator.a"; path = "libRNUUIDGenerator.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +320,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				45AEF1E67963450983CFF563 /* libRNVectorIcons.a in Frameworks */,
+				0834200749C141938DB66D73 /* libRNUUIDGenerator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +490,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				5AAF5A9F4C194C32B3782798 /* RNVectorIcons.xcodeproj */,
+				BCC7CF3B820A433E9C380027 /* RNUUIDGenerator.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1065,10 +1070,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 				);
 			};
 			name = Debug;
@@ -1090,10 +1097,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 				);
 			};
 			name = Release;
@@ -1116,6 +1125,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 				);
 			};
 			name = Debug;
@@ -1137,6 +1147,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 				);
 			};
 			name = Release;
@@ -1167,10 +1178,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 				);
 			};
 			name = Debug;
@@ -1201,10 +1214,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 				);
 			};
 			name = Release;
@@ -1230,6 +1245,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1254,6 +1270,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
