@@ -3,6 +3,7 @@ package com.example01;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.evollu.react.fcm.FIRMessagingPackage;
 import com.reactlibrary.RNUUIDGeneratorPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -26,7 +27,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNUUIDGeneratorPackage(),
+          new FIRMessagingPackage(),
+          new RNUUIDGeneratorPackage(),
           new VectorIconsPackage(),
           new WebRTCModulePackage()
       );
