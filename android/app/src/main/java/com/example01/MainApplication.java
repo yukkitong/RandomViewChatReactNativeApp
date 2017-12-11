@@ -12,7 +12,6 @@ import com.evollu.react.fcm.FIRMessagingPackage;
 import com.reactlibrary.RNUUIDGeneratorPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.oney.WebRTCModule.WebRTCModulePackage;
-import com.gcrabtree.rctsocketio.SocketIoPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,8 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
           new FIRMessagingPackage(),
           new RNUUIDGeneratorPackage(),
           new VectorIconsPackage(),
-          new WebRTCModulePackage(),
-          new SocketIoPackage()
+          new WebRTCModulePackage()
       );
     }
 
