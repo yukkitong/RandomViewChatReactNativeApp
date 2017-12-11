@@ -6,16 +6,16 @@ import {
     Text
 } from 'react-native';
 import AvatarInfo from "./AvartarInfo";
-
-
+import UserInfo from "./UserInfo";
+import IconMenu from "./IconMenu";
 
 export default class Header extends Component<{}> {
     render() {
         return (
-            <View>
-                {/*Avatar*/}
+            <View style={styles.container}>
                 <AvatarInfo/>
-
+                <UserInfo/>
+                <IconMenu/>
             </View>
         );
     }
@@ -23,6 +23,10 @@ export default class Header extends Component<{}> {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        width: '100%',
+        height: 50,
+        flexDirection: 'row',
+        borderWidth: 1
     },
 });

@@ -4,10 +4,11 @@ import {Avatar} from 'react-native-elements';
 import {
     Platform,
     StyleSheet,
-    View
+    View,
+    Image
 } from 'react-native';
 
-export default class Avatar extends Component {
+export default class AvatarInfo extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -30,7 +31,8 @@ export default class Avatar extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        height: 50
     },
     avatarArea: {
         marginLeft: 10,
