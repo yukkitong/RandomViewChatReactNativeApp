@@ -50,6 +50,12 @@
 		18AB1C4DF5B9482DB29ED07E /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3156251EE6884244BB63156C /* Zocial.ttf */; };
 		0834200749C141938DB66D73 /* libRNUUIDGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB78757E8C474CA226ECE1 /* libRNUUIDGenerator.a */; };
 		27C86160B92245CDA1A9031A /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB73127F0744825959EA238 /* libRNFIRMessaging.a */; };
+		3CA4DAEAC1D1484CBFE0AB5A /* libReactCBLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8785F7B2918F4FD0A8FDBD3C /* libReactCBLite.a */; };
+		B8191A8D5E3644E988CC3333 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8082723C2F46419BF1E3F8 /* libz.tbd */; };
+		9D15E42310C041229D06993B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FBCCF2F9144FBAB7422143 /* libsqlite3.tbd */; };
+		39544A7D65DC4CA9AD53D068 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2965BD0D2914D079BE78C8E /* SystemConfiguration.framework */; };
+		ED4DFEBA23654EA388584DFF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0356F132A1494657AA4427B2 /* CFNetwork.framework */; };
+		103B7DFC24AD40E1B79A3E21 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493C0D1B847E4D27A21EA27D /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +300,13 @@
 		5AEB78757E8C474CA226ECE1 /* libRNUUIDGenerator.a */ = {isa = PBXFileReference; name = "libRNUUIDGenerator.a"; path = "libRNUUIDGenerator.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		4684E5F3F81F4DA183591673 /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; name = "RNFIRMessaging.xcodeproj"; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		3DB73127F0744825959EA238 /* libRNFIRMessaging.a */ = {isa = PBXFileReference; name = "libRNFIRMessaging.a"; path = "libRNFIRMessaging.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		51DC63389D674ECC8AC1631F /* ReactCBLite.xcodeproj */ = {isa = PBXFileReference; name = "ReactCBLite.xcodeproj"; path = "../node_modules/react-native-couchbase-lite/ios/ReactCBLite.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		8785F7B2918F4FD0A8FDBD3C /* libReactCBLite.a */ = {isa = PBXFileReference; name = "libReactCBLite.a"; path = "libReactCBLite.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		8D8082723C2F46419BF1E3F8 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		68FBCCF2F9144FBAB7422143 /* libsqlite3.tbd */ = {isa = PBXFileReference; name = "libsqlite3.tbd"; path = "usr/lib/libsqlite3.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		B2965BD0D2914D079BE78C8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		0356F132A1494657AA4427B2 /* CFNetwork.framework */ = {isa = PBXFileReference; name = "CFNetwork.framework"; path = "System/Library/Frameworks/CFNetwork.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		493C0D1B847E4D27A21EA27D /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +338,12 @@
 				45AEF1E67963450983CFF563 /* libRNVectorIcons.a in Frameworks */,
 				0834200749C141938DB66D73 /* libRNUUIDGenerator.a in Frameworks */,
 				27C86160B92245CDA1A9031A /* libRNFIRMessaging.a in Frameworks */,
+				3CA4DAEAC1D1484CBFE0AB5A /* libReactCBLite.a in Frameworks */,
+				B8191A8D5E3644E988CC3333 /* libz.tbd in Frameworks */,
+				9D15E42310C041229D06993B /* libsqlite3.tbd in Frameworks */,
+				39544A7D65DC4CA9AD53D068 /* SystemConfiguration.framework in Frameworks */,
+				ED4DFEBA23654EA388584DFF /* CFNetwork.framework in Frameworks */,
+				103B7DFC24AD40E1B79A3E21 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +515,7 @@
 				5AAF5A9F4C194C32B3782798 /* RNVectorIcons.xcodeproj */,
 				BCC7CF3B820A433E9C380027 /* RNUUIDGenerator.xcodeproj */,
 				4684E5F3F81F4DA183591673 /* RNFIRMessaging.xcodeproj */,
+				51DC63389D674ECC8AC1631F /* ReactCBLite.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -517,6 +537,7 @@
 				00E356EF1AD99517003FC87E /* Example01Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				F5910C309F764EFF899DB81E /* Resources */,
+				8B65156F753040299CD9B624 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -558,6 +579,19 @@
 				3156251EE6884244BB63156C /* Zocial.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
+		8B65156F753040299CD9B624 /* Frameworks */ = {
+			isa = "PBXGroup";
+			children = (
+				8D8082723C2F46419BF1E3F8 /* libz.tbd */,
+				68FBCCF2F9144FBAB7422143 /* libsqlite3.tbd */,
+				B2965BD0D2914D079BE78C8E /* SystemConfiguration.framework */,
+				0356F132A1494657AA4427B2 /* CFNetwork.framework */,
+				493C0D1B847E4D27A21EA27D /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 			path = "";
 		};
@@ -1077,12 +1111,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 					"$(SRCROOT)\..\node_modules\react-native-fcm\ios",
+					"$(SRCROOT)/../node_modules/react-native-couchbase-lite/ios",
 				);
 			};
 			name = Debug;
@@ -1106,12 +1142,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 					"$(SRCROOT)\..\node_modules\react-native-fcm\ios",
+					"$(SRCROOT)/../node_modules/react-native-couchbase-lite/ios",
 				);
 			};
 			name = Release;
@@ -1136,6 +1174,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 					"$(SRCROOT)\..\node_modules\react-native-fcm\ios",
+					"$(SRCROOT)/../node_modules/react-native-couchbase-lite/ios",
 				);
 			};
 			name = Debug;
@@ -1159,6 +1198,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 					"$(SRCROOT)\..\node_modules\react-native-fcm\ios",
+					"$(SRCROOT)/../node_modules/react-native-couchbase-lite/ios",
 				);
 			};
 			name = Release;
@@ -1191,12 +1231,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 					"$(SRCROOT)\..\node_modules\react-native-fcm\ios",
+					"$(SRCROOT)/../node_modules/react-native-couchbase-lite/ios",
 				);
 			};
 			name = Debug;
@@ -1229,12 +1271,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
 					"$(SRCROOT)\..\node_modules\react-native-fcm\ios",
+					"$(SRCROOT)/../node_modules/react-native-couchbase-lite/ios",
 				);
 			};
 			name = Release;
@@ -1262,6 +1306,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1286,6 +1331,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
