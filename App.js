@@ -10,6 +10,10 @@ import UserDetail from './app/scene/UserDetail';
 import Moment from './app/scene/Moment';
 import MomentDetail from './app/scene/MomentDetail';
 
+import initLocalDatabase from './app/component/database';
+
+initLocalDatabase();
+
 export default () => {
   return (
     <Router>
