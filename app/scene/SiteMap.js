@@ -27,6 +27,10 @@ import {
   RequestCash as RequestCashModal,
 } from './Modals';
 
+import initLocalDatabase from '../component/database';
+
+initLocalDatabase();
+
 export default class SiteMap extends React.Component {
   
   modal = {};

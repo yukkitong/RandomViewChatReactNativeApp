@@ -2,16 +2,19 @@ import React from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
+  Alert,
   View,
   Text,
   Picker,
   Switch,
   ActivityIndicator,
-  AsyncStorage
+  AsyncStorage,
+  TextInput
 } from 'react-native';
 import Modal from 'react-native-modalbox';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
+import Couchbase from 'react-native-couchbase-lite';
 
 const Header = ({ title, onClose, style = {} }) => {
   style = Object.assign({ top: 0, right: 0 }, style)
@@ -42,18 +45,34 @@ Header.propTypes = {
   onClose: PropTypes.func
 };
 
-const Indicator = ({ size = 'large', color, visible = false }) => {
-  return (
-    <View style={styles.indicator}>
-      <ActivityIndicator size={size} animating={visible} />
-    </View>
-  );
+class Indicator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      size: this.props.size || 'large',
+      visible: this.props.visible,
+    };
+  }
+
+  setVisible(visible) {
+    this.setState({ ...this.state, visible });
+  }
+  
+  render() {
+    return (
+      <View style={[ styles.indicator, {opacity: this.state.visible ? 1.0 : 0.0} ]}>
+        <ActivityIndicator
+          size={this.state.size} 
+          animating={true} />
+      </View>
+    );
+  }
 }
 
 Indicator.propTypes = {
   size: PropTypes.string,
   // color: PropTypes.color,
-  visible: PropTypes.bool
+  visible: PropTypes.bool.isRequired
 };
 
 // 저작권
@@ -161,8 +180,64 @@ export class PayHistory extends React.Component {
 // 문의하기
 export class Inquiry extends React.Component {
 
-  state = { type: 'heart' };
-  
+  constructor(props) {
+    super(props);
+    this.state = { 
+      category: 'heart',
+      content: '',
+      upload: false
+    };
+  }
+
+  onUpload = () => {
+    Couchbase.initRESTClient(manager => {
+      
+      manager.database.put_db({db: 'users'})
+        .then(() => {
+          return manager.document.post({
+            db: 'users',
+            body: {
+              name: 'Jason'
+            }
+          });
+        })
+        .then(res => console.log(res))
+        .catch(error => console.log(error));
+
+      // manager.database.delete_db({db: 'users'})
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //     // manager.database.put_db({db: 'users'})
+      //     //   .then((res) => {
+      //     //     console.log('----------------------------');
+      //     //     console.log(res);
+      //     //   })
+      //   });
+    });
+
+    if (!this.isValidInput()) {
+      Alert.alert('Input content');
+      return;
+    }
+    
+    this.indicator.setVisible(true);
+
+    // var remote = `http://jason:jason1452!@localhost:4984/inquiry`;
+    // database.createDocument({
+    //   category: this.state.category,
+    //   content: this.state.content,
+    //   author: 'Jason BAE',
+    //   created: new Date().toISOString()
+    // });
+  }
+ 
+  isValidInput() {
+    return !!this.state.content;
+  }
+
   open = () => this.modal.open();
   close = () => this.modal.close();
 
@@ -172,23 +247,36 @@ export class Inquiry extends React.Component {
         entry="bottom"
         position="bottom" 
         ref={ comp => this.modal = comp } 
-        style={[{ height: 240 }, styles.modal]}
+        style={[{ height: 360 }, styles.modal]}
       >
         <Header title="문의하기" onClose={ this.close }/>
         <View style={[styles.content, { justifyContent: 'flex-start' }]}>
           <View style={styles.picker}>
             <Picker
               mode="dropdown"
-              selectedValue={this.state.type}
-              onValueChange={(itemValue, itemIndex) => this.setState({type: itemValue})}>
+              selectedValue={this.state.category}
+              onValueChange={(itemValue, itemIndex) => this.setState({ category: itemValue })}>
               <Picker.Item label="하트" value="heart" />
               <Picker.Item label="오류" value="error" />
               <Picker.Item label="인앱결제" value="payinapp" />
               <Picker.Item label="기타" value="misc" />
             </Picker>
           </View>
+          <TextInput style={{
+              height: 40, 
+              marginTop: 10, 
+              borderColor: 'black', 
+              borderWidth: 1
+            }} 
+            underlineColorAndroid="transparent" 
+            blurOnSubmit={true}
+            multiline={true}
+            numberOfLines={4}
+            onChangeText={content => this.setState({ content })}>
+          </TextInput>
+          <Indicator ref={ comp => this.indicator = comp } visible={false} />
         </View>
-        <TouchableOpacity onPress={ () => this.modal.close() }>
+        <TouchableOpacity onPress={ this.onUpload }>
           <Text style={[styles.center, styles.button]}>확인</Text>
         </TouchableOpacity>
       </Modal>
