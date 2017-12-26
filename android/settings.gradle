@@ -1,6 +1,4 @@
 rootProject.name = 'Example01'
-include ':react-native-couchbase-lite'
-project(':react-native-couchbase-lite').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-couchbase-lite/android')
 
 //include ':react-native-fcm'
 //project(':react-native-fcm').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fcm/android')

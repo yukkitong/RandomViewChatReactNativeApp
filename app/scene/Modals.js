@@ -191,19 +191,28 @@ export class Inquiry extends React.Component {
 
   onUpload = () => {
     Couchbase.initRESTClient(manager => {
-      
-      manager.database.put_db({db: 'users'})
-        .then(() => {
-          return manager.document.post({
-            db: 'users',
-            body: {
-              name: 'Jason'
-            }
-          });
-        })
-        .then(res => console.log(res))
-        .catch(error => console.log(error));
+        //manager.help();
+        // manager.server.post_replicate.help();
 
+        // manager.query.get_db_all_docs({db: 'db'})
+        // .then((res) => console.log(res));
+        manager.server.post_replicate({
+          body: {
+            source: {
+              url: 'http://10.0.2.2:4984/test'
+            },
+            target: 'db',
+            continuous: true
+          }
+        })
+          .then((res) => {
+            var { sessionId } = res.obj;
+            console.log(sessionId);
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          }); 
       // manager.database.delete_db({db: 'users'})
       //   .then((res) => {
       //     console.log(res);

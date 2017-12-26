@@ -58,3 +58,37 @@
 - 쪽지알림
 
 ### 현금출금신청하기
+
+
+
+### Couchbase Lite Help
+12-23 01:28:38.415  3075  6483 I ReactNativeJS: operations for the 'attachment' tag
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_db_doc_attachment: Get attachment
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * put_db_doc_attachment: Add or update document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS: operations for the 'database' tag
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * post_db_bulk_docs: Bulk docs
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * delete_db: Delete database
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_db: Database info
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * put_db: Create database
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * post_db_changes: Changes
+12-23 01:28:38.415  3075  6483 I ReactNativeJS: operations for the 'server' tag
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get: summary
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_active_tasks: List of running tasks
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_all_dbs: Get database names
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * post_replicate: Starts or cancels a database replication operation
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_session: Retrieve session information
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_uuids: List of database identifiers
+12-23 01:28:38.415  3075  6483 I ReactNativeJS: operations for the 'document' tag
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * post: Create document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * delete: Delete document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get: Get document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * put: Create or update document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * post_db_purge: Purge document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS: operations for the 'query' tag
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_db_all_docs: All docs
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_db_changes: Changes
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * delete_db_design_ddoc: Delete design document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_db_design_ddoc: Get Views of a design document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * put_db_design_ddoc: Update views of a design document
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * get_db_design_ddoc_view_view: Query a view
+12-23 01:28:38.415  3075  6483 I ReactNativeJS:   * post_db_design_ddoc_view_view: Query a view

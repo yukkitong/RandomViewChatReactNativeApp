@@ -7,11 +7,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "pouchdb-adapter-asyncstorage": "^6.3.4",
+    "pouchdb-react-native": "^6.3.4",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-native": "0.50.4",
     "react-native-app-intro": "https://github.com/merryjs/react-native-app-intro",
-    "react-native-couchbase-lite": "^0.6.0",
     "react-native-elements": "^0.18.4",
     "react-native-fcm": "^10.0.3",
     "react-native-jwt-io": "^1.0.3",

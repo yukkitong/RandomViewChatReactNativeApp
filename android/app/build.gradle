@@ -155,7 +155,6 @@ dependencies {
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile 'com.google.firebase:firebase-core:10.0.1'
     //compile project(':react-native-fcm')
-    compile project(':react-native-couchbase-lite')
     compile project(':react-native-vector-icons')
     compile project(':WebRTCModule')
 }
